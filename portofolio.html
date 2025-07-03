@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Portofolio Dimas - Proyek Web</title>
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet"/>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: url('background.jpg') no-repeat center center/cover;
+      color: #fff;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      padding: 12px 5%;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
+
+    .logo {
+      font-size: 1.4rem;
+      font-weight: bold;
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .navbar {
+      display: flex;
+      gap: 18px;
+    }
+
+    .navbar a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    .navbar a:hover,
+    .navbar a.active {
+      color: #e63946;
+    }
+
+    .hamburger {
+      display: none;
+      font-size: 1.5rem;
+      color: #fff;
+      cursor: pointer;
+    }
+
+    @media (max-width: 768px) {
+      .navbar {
+        display: none;
+        flex-direction: column;
+        background: rgba(0, 0, 0, 0.6);
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+        padding: 16px;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        border-radius: 8px;
+      }
+
+      .navbar.show {
+        display: flex;
+      }
+
+      .hamburger {
+        display: block;
+      }
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 0 5%;
+    }
+
+    .portfolio-page {
+      padding: 50px 0;
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      border-radius: 20px;
+      margin-top: 40px;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin-bottom: 36px;
+      color: #e5f3ff;
+    }
+
+    .portfolio-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+    }
+
+    .portfolio-item {
+      background: rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(5px);
+      -webkit-backdrop-filter: blur(5px);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 16px;
+      overflow: hidden;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.3s ease;
+    }
+
+    .portfolio-item:hover {
+      transform: translateY(-6px);
+    }
+
+    .portfolio-item img {
+      width: 100%;
+      height: 130px;
+      object-fit: cover;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .portfolio-item h3 {
+      font-size: 1rem;
+      margin: 12px 0 4px;
+      color: #ffffff;
+    }
+
+    .portfolio-item p {
+      font-size: 0.85rem;
+      padding: 0 16px;
+      color: #e0e0e0;
+      line-height: 1.5;
+    }
+
+    .btn {
+      display: inline-block;
+      margin: 12px auto 16px;
+      padding: 8px 18px;
+      background: #e63946;
+      color: #fff;
+      font-size: 0.85rem;
+      border-radius: 24px;
+      border: 2px solid #e63946;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      box-shadow: 0 0 6px #e63946;
+    }
+
+    .btn:hover {
+      background: transparent;
+      color: #e63946;
+      box-shadow: none;
+    }
+
+    .next-button {
+      position: fixed;
+      top: 50%;
+      right: 14px;
+      transform: translateY(-50%);
+      font-size: 1.8rem;
+      color: #ffffff;
+      background-color: rgba(0, 100, 0, 0.5);
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
+      border-radius: 50%;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+      text-decoration: none;
+      padding: 6px;
+      z-index: 1000;
+      transition: all 0.3s ease;
+    }
+
+    .next-button:hover {
+      transform: translateY(-50%) scale(1.1);
+      background-color: rgba(230, 57, 70, 0.7);
+      color: #fff;
+    }
+
+    @media (max-width: 768px) {
+      .portfolio-container {
+        grid-template-columns: 1fr;
+      }
+
+      .section-title {
+        font-size: 1.4rem;
+      }
+
+      .btn {
+        font-size: 0.75rem;
+        padding: 6px 14px;
+      }
+
+      .next-button {
+        font-size: 1.6rem;
+        padding: 8px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header>
+    <a href="index.html" class="logo">Portofolio.</a>
+    <div class="hamburger" onclick="toggleNavbar()">
+      <i class="ri-menu-line"></i>
+    </div>
+    <nav class="navbar" id="navbar">
+      <a href="index.html">Home</a>
+      <a href="tentang.html">Tentang Saya</a>
+      <a href="portofolio.html" class="active">Portofolio</a>
+      <a href="service.html">Service</a>
+      <a href="kontak.html">Kontak</a>
+    </nav>
+  </header>
+
+  <!-- BAGIAN PORTOFOLIO -->
+  <div class="container">
+    <section class="portfolio-page">
+      <h2 class="section-title">Proyek Website Saya</h2>
+      <div class="portfolio-container">
+
+        <!-- Proyek 1 -->
+        <div class="portfolio-item">
+          <img src="Screenshot 2024-06-26 151434.png" alt="Web Penjualan Apotik" />
+          <h3>Web Penjualan Apotik</h3>
+          <p>Website untuk mengelola penjualan, stok obat, dan laporan keuangan di apotik.</p>
+          <a href="https://drive.google.com/file/d/1eybXve_lpyIECDzs2KOmpILajvP6-3Nj/view?usp=sharing" class="btn" target="_blank">
+            <i class="ri-code-line"></i> Lihat Kode
+          </a>
+        </div>
+
+        <!-- Proyek 2 -->
+        <div class="portfolio-item">
+          <img src="desa.png" alt="Website Profil Desa" />
+          <h3>Website Profil Desa</h3>
+          <p>Menampilkan informasi desa, budaya, potensi wisata, dan peta desa secara interaktif.</p>
+          <a href="https://drive.google.com/file/d/1Xfe-bqjdLUCIOjUF9Y4gKe_AVV_D1YLC/view?usp=sharing" class="btn" target="_blank">
+            <i class="ri-code-line"></i> Lihat Kode
+          </a>
+        </div>
+
+        <!-- Proyek 3 -->
+        <div class="portfolio-item">
+          <img src="hbd.png" alt="Web HappyBirthDay" />
+          <h3>Web HappyBirthDay</h3>
+          <p>Menampilkan Sebuah Ucapan Untuk Orang Yang Sedang berulang tahun Dan Menyediakan Fitur Lagu HappyBirthDay</p>
+          <a href="https://drive.google.com/file/d/1iOp1ml_S2k3nGTs4TYSglyFRDPTeQntu/view?usp=sharing" class="btn" target="_blank">
+            <i class="ri-code-line"></i> Lihat Kode
+          </a>
+        </div>
+
+      </div>
+    </section>
+  </div>
+
+  <!-- TOMBOL PANAH KE HALAMAN PORTOFOLIO 2 -->
+  <a href="portofolio2.html" class="next-button" title="Lanjut ke Portofolio 2">
+    <i class="ri-arrow-right-s-line"></i>
+  </a>
+
+  <!-- JAVASCRIPT UNTUK TOGGLE NAVBAR -->
+  <script>
+    function toggleNavbar() {
+      const navbar = document.getElementById("navbar");
+      navbar.classList.toggle("show");
+    }
+  </script>
+
+</body>
+</html>

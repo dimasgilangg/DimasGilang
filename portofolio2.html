@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Portofolio Dimas - Media Pembelajaran</title>
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet"/>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: url('background.jpg') no-repeat center center/cover;
+      background-attachment: fixed;
+      color: #fff;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 0 5%;
+    }
+
+    .portfolio-page {
+      padding: 50px 0;
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px); /* Safari */
+      border-radius: 20px;
+      margin-top: 40px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin-bottom: 36px;
+      color: #e5f3ff;
+    }
+
+    .portfolio-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+    }
+
+    .portfolio-item {
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 16px;
+      overflow: hidden;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.3s ease;
+    }
+
+    .portfolio-item:hover {
+      transform: translateY(-6px);
+    }
+
+    .portfolio-item img {
+      width: 100%;
+      height: 130px;
+      object-fit: cover;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .portfolio-item h3 {
+      font-size: 1rem;
+      margin: 12px 0 4px;
+      color: #ffffff;
+    }
+
+    .portfolio-item p {
+      font-size: 0.85rem;
+      padding: 0 16px;
+      color: #e0e0e0;
+      line-height: 1.5;
+    }
+
+    .btn {
+      display: inline-block;
+      margin: 12px auto 16px;
+      padding: 8px 18px;
+      background: #e63946;
+      color: #fff;
+      font-size: 0.85rem;
+      border-radius: 24px;
+      border: 2px solid #e63946;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      box-shadow: 0 0 6px #e63946;
+    }
+
+    .btn:hover {
+      background: transparent;
+      color: #e63946;
+      box-shadow: none;
+    }
+
+    .back-button {
+      position: fixed;
+      top: 50%;
+      left: 20px;
+      transform: translateY(-50%);
+      font-size: 2rem;
+      color: #006400;
+      background-color: rgba(255, 255, 255, 0.5);
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
+      border-radius: 50%;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      text-decoration: none;
+      padding: 10px;
+      z-index: 1000;
+      transition: transform 0.3s, color 0.3s;
+    }
+
+    .back-button:hover {
+      transform: translateY(-50%) scale(1.1);
+      color: #e63946;
+    }
+
+    @media (max-width: 768px) {
+      .portfolio-container {
+        grid-template-columns: 1fr;
+      }
+
+      .section-title {
+        font-size: 1.4rem;
+      }
+
+      .btn {
+        font-size: 0.75rem;
+        padding: 6px 14px;
+      }
+
+      .back-button {
+        font-size: 1.6rem;
+        padding: 8px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <section class="portfolio-page">
+      <h2 class="section-title">Aplikasi Media Pembelajaran</h2>
+      <div class="portfolio-container">
+
+        <!-- Aplikasi 1 -->
+        <div class="portfolio-item">
+          <img src="tatasurya.jpg" alt="Aplikasi AR Tata Surya" />
+          <h3>Aplikasi AR Tata Surya</h3>
+          <p>Media pembelajaran interaktif berbasis Augmented Reality yang memperkenalkan planet-planet dalam tata surya.</p>
+          <a href="https://drive.google.com/file/d/1yV19YiV4ZBt6yY5QjqH1uAtrH-8-iUAN/view?usp=sharing" class="btn" target="_blank">
+            <i class="ri-download-line"></i> Lihat APK
+          </a>
+        </div>
+
+        <!-- Aplikasi 2 -->
+        <div class="portfolio-item">
+  <img src="atm.jpg" alt="Aplikasi Atmosfer Bumi" />
+  <h3>Aplikasi Atmosfer Bumi</h3>
+  <p>Aplikasi edukasi Android yang menjelaskan lapisan-lapisan atmosfer bumi secara interaktif dan menyenangkan.</p>
+  <a href="https://drive.google.com/file/d/1FyN86JGxz4eVrC9PU-v73gijmYxYYkQ3/view?usp=sharing" class="btn" target="_blank">
+    <i class="ri-download-line"></i> Lihat APK
+  </a>
+</div>
+
+
+      </div>
+    </section>
+  </div>
+
+  <!-- Tombol kembali ke halaman portofolio utama -->
+  <a href="portofolio.html" class="back-button" title="Kembali ke Portofolio Web">
+    <i class="ri-arrow-left-s-line"></i>
+  </a>
+
+</body>
+</html>

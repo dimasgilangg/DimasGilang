@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Data Diri</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      background: url('background.jpg') no-repeat center/cover;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 5%;
+      color: #fff;
+      flex-direction: column;
+      overflow-x: hidden;
+    }
+
+    .profile-container {
+      background: rgba(255, 255, 255, 0.1);
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      border-radius: 30px;
+      backdrop-filter: blur(15px);
+      -webkit-backdrop-filter: blur(15px);
+      box-shadow: 0 0 25px rgba(255, 255, 255, 0.2);
+      padding: 40px;
+      max-width: 1000px;
+      width: 100%;
+      animation: zoom-in 1s ease forwards;
+      transform: scale(0);
+    }
+
+    @keyframes zoom-in {
+      100% {
+        transform: scale(1);
+      }
+    }
+
+    .profile-header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .profile-header img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      border: 3px solid #fff;
+      box-shadow: 0 0 15px #fff;
+      object-fit: cover;
+    }
+
+    .profile-header h2 {
+      margin-top: 20px;
+      font-size: 28px;
+      text-shadow: 0 0 5px #fff;
+    }
+
+    .profile-content {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+    }
+
+    .row-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+    }
+
+    .profile-section {
+      flex: 1;
+      min-width: 240px;
+      background: rgba(255,255,255,0.1);
+      padding: 20px;
+      border-radius: 20px;
+      border: 2px solid rgba(255,255,255,0.5);
+      box-shadow: 0 0 15px rgba(255,255,255,0.2);
+      transition: transform 0.3s;
+    }
+
+    .profile-section:hover {
+      transform: scale(1.03);
+    }
+
+    .profile-section h3 {
+      font-size: 18px;
+      margin-bottom: 10px;
+      border-bottom: 1px solid #fff;
+      padding-bottom: 5px;
+      text-transform: uppercase;
+    }
+
+    .profile-section h3 i {
+      margin-right: 8px;
+      color: #fff;
+    }
+
+    .profile-section p,
+    .profile-section ul {
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    .profile-section ul {
+      padding-left: 18px;
+      list-style: circle;
+    }
+
+    .btn-back {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 10px 25px;
+      background: #fff;
+      color: #222;
+      border: none;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+      box-shadow: 0 0 10px #fff;
+    }
+
+    .btn-back:hover {
+      background: transparent;
+      color: #fff;
+      border: 1px solid #fff;
+    }
+
+    @media (max-width: 768px) {
+      body {
+        padding: 20px 3%;
+        flex-direction: column;
+      }
+
+      .profile-container {
+        padding: 25px;
+      }
+
+      .row-container {
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .profile-header img {
+        width: 100px;
+        height: 100px;
+      }
+
+      .profile-header h2 {
+        font-size: 20px;
+      }
+
+      .profile-section h3 {
+        font-size: 16px;
+      }
+
+      .profile-section p,
+      .profile-section ul {
+        font-size: 14px;
+      }
+
+      .btn-back {
+        padding: 8px 20px;
+        font-size: 14px;
+        margin-top: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="profile-container">
+    <div class="profile-header">
+      <img src="gg.jpg" alt="Foto Profil">
+      <h2>Dimas Gilang Gumelar</h2>
+    </div>
+
+    <div class="profile-content">
+      <div class="row-container">
+        <div class="profile-section">
+          <h3><i class="fas fa-id-card"></i> Data Diri</h3>
+          <ul>
+            <li><strong>Nama:</strong> Dimas Gilang Gumelar</li>
+            <li><strong>Tempat, Tanggal Lahir:</strong> Tasikmalaya, 30 Maret 2003</li>
+            <li><strong>Alamat:</strong> Gunung Koneng, Kel Cilembang, Kec Cihideung, Kota Tasikmalaya</li>
+            <li><strong>Email:</strong> gilanggumelardimas@gmail.com</li>
+            <li><strong>Nomor HP:</strong> 0895-3350-50298</li>
+          </ul>
+        </div>
+        <div class="profile-section">
+          <h3><i class="fas fa-user-astronaut"></i> Karakter</h3>
+          <ul>
+            <li>Rajin Belajar</li>
+            <li>Senang Mencoba Hal Baru</li>
+            <li>Mudah Beradaptasi dan Bekerja Sama Tim</li>
+            <li>Kreatif dalam Menyelesaikan Masalah</li>
+            <li>Bertanggung Jawab dan Disiplin</li>
+            <li>Pekerja Keras dan Pantang Menyerah</li>
+          </ul>
+        </div>
+        <div class="profile-section">
+          <h3><i class="fas fa-laptop-code"></i> Keterampilan</h3>
+          <ul>
+            <li>HTML, CSS, PHP, JavaScript</li>
+            <li>MySQL, XAMPP, Git</li>
+            <li>Desain UI Sederhana</li>
+            <li>AR dengan Vuforia & Unity</li>
+            <li>Blender (3D Modeling)</li>
+            <li>Canva (Desain Grafis)</li>
+            <li>CapCut (Video Editing)</li>
+          </ul>
+        </div>
+        <div class="profile-section">
+          <h3><i class="fas fa-heart"></i> Hobi</h3>
+          <ul>
+            <li>Membuat Aplikasi Berbasis Android</li>
+            <li>Membuat Proyek Website</li>
+            <li>Berolahraga seperti Sepak Bola, Bulu Tangkis, Tenis Meja</li>
+            <li>Bermain Game Edukatif</li>
+          </ul>
+        </div>
+        <div class="profile-section">
+          <h3><i class="fas fa-graduation-cap"></i> Pendidikan</h3>
+          <ul>
+            <li>SMA Islam Cipasung - IPA (2018–2021)</li>
+            <li>S1 Teknik Informatika - Universitas Perjuangan (2021–2025)</li>
+          </ul>
+        </div>
+      </div>
+
+      <a href="tentang.html" class="btn-back"><i class="fas fa-arrow-left"></i> Kembali</a>
+    </div>
+  </div>
+
+</body>
+</html>

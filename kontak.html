@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kontak - Dimas Gilang Gumelar</title>
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: url('background.jpg') no-repeat center center/cover;
+      color: #fff;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(0, 0, 0, 0.4);
+      padding: 12px 5%;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
+
+    .logo {
+      font-size: 1.4rem;
+      font-weight: bold;
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .navbar {
+      display: flex;
+      gap: 18px;
+    }
+
+    .navbar a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    .navbar a:hover,
+    .navbar a.active {
+      color: #e63946;
+    }
+
+    .hamburger {
+      display: none;
+      font-size: 1.8rem;
+      color: #fff;
+      cursor: pointer;
+    }
+
+    @media (max-width: 768px) {
+      .navbar {
+        display: none;
+        flex-direction: column;
+        background: rgba(0, 0, 0, 0.7);
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        padding: 16px;
+        border-radius: 10px;
+        z-index: 1000;
+      }
+
+      .navbar.show {
+        display: flex;
+      }
+
+      .hamburger {
+        display: block;
+      }
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 80px auto;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(12px) saturate(150%);
+      -webkit-backdrop-filter: blur(12px) saturate(150%);
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #e5f3ff;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: 500;
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      padding: 10px 14px;
+      border: none;
+      border-radius: 10px;
+      font-size: 1rem;
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      background: #e63946;
+      color: #fff;
+      border: none;
+      border-radius: 25px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background: transparent;
+      color: #e63946;
+      border: 2px solid #e63946;
+    }
+
+    .contact-info {
+      margin-top: 40px;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #ccc;
+    }
+
+    .contact-info a {
+      color: #e5f3ff;
+      text-decoration: none;
+    }
+
+    .contact-info a:hover {
+      color: #ffafcc;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        margin: 50px 20px;
+        padding: 30px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER + NAVBAR -->
+  <header>
+    <a href="index.html" class="logo">Portofolio.</a>
+    <div class="hamburger" onclick="toggleNavbar()">
+      <i class="ri-menu-line"></i>
+    </div>
+    <nav class="navbar" id="navbar">
+      <a href="index.html">Home</a>
+      <a href="tentang.html">Tentang Saya</a>
+      <a href="portofolio.html">Portofolio</a>
+      <a href="service.html">Service</a>
+      <a href="kontak.html" class="active">Kontak</a>
+    </nav>
+  </header>
+
+  <!-- FORM KONTAK -->
+  <div class="container">
+    <h2>Hubungi Saya</h2>
+
+    <form action="https://formspree.io/f/mnqeyvla" method="POST">
+      <div class="form-group">
+        <label for="name">Nama</label>
+        <input type="text" id="name" name="nama" required />
+      </div>
+
+      <div class="form-group">
+        <label for="email">Alamat Email</label>
+        <input type="email" id="email" name="email" required />
+      </div>
+
+      <div class="form-group">
+        <label for="message">Pesan</label>
+        <textarea id="message" name="pesan" required></textarea>
+      </div>
+
+      <button type="submit">Kirim Pesan ke Email</button>
+    </form>
+
+    <div class="contact-info">
+      <p>Email: <a href="mailto:gilanggumelardimas@gmail.com">gilanggumelardimas@gmail.com</a></p>
+      <p>WhatsApp: <a href="https://wa.me/62895335050298" target="_blank">0895-3350-50298</a></p>
+      <p>Instagram: <a href="https://www.instagram.com/dimasrstiii?igsh=MWRja3drZTF1ZnVpaw==" target="_blank">@dimasgilang</a></p>
+    </div>
+  </div>
+
+  <!-- SCRIPT NAVBAR RESPONSIF -->
+  <script>
+    function toggleNavbar() {
+      const navbar = document.getElementById("navbar");
+      navbar.classList.toggle("show");
+    }
+  </script>
+
+</body>
+</html>

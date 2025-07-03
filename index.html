@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Personal Dimas Gilang Gumelar Portofolio</title>
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <header class="animated">
+      <a href="#" class="logo">Portofolio.</a>
+      <div class="hamburger" onclick="toggleNavbar()">≡</div>
+      <nav class="navbar" id="navbar">
+        <a href="index.html" class="active">Home</a>
+        <a href="tentang.html">Tentang Saya</a>
+        <a href="portofolio.html">Portofolio</a>
+        <a href="service.html">Service</a>
+        <a href="kontak.html">Kontak</a>
+      </nav>
+    </header>
+
+    <section class="home animated">
+      <div class="home-detail">
+        <h1>Dimas Gilang Gumelar</h1>
+        <h2>Lulusan Teknik Informatika</h2>
+        <p>Saya adalah lulusan Teknik Informatika dari Universitas Perjuangan yang memiliki minat besar dalam pengembangan aplikasi web dan mobile. Berpengalaman dalam membuat berbagai proyek, saya terbiasa bekerja secara individu maupun tim. Saya antusias belajar hal baru dan siap berkontribusi menciptakan solusi digital yang inovatif.</p>
+        <div class="download-social">
+          <a href="cv/CV_Dimas_Gilang_Gumelar_Tasikmalaya.pdf" download class="btn">Download CV</a>
+          <div class="social-icons">
+            <a href="mailto:dimasgilang@email.com"><i class="ri-mail-send-fill"></i></a>
+            <a href="https://wa.me/62895335050298"><i class="ri-whatsapp-fill"></i></a>
+            <a href="https://www.instagram.com/dimasrstiii?igsh=MWRja3drZTF1ZnVpaw=="><i class="ri-instagram-fill"></i></a>
+            <a href="https://www.facebook.com/profile.php?id=100076255598338"><i class="ri-facebook-circle-fill"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="home-img">
+        <div class="img-box">
+          <img src="d-removebg-preview.png" alt="Foto Dimas">
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script>
+    function toggleNavbar() {
+      document.getElementById("navbar").classList.toggle("show");
+    }
+  </script>
+</body>
+</html>

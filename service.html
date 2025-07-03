@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Layanan Dimas - Service</title>
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet"/>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: url('background.jpg') no-repeat center center/cover;
+      color: #fff;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      padding: 12px 5%;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
+
+    .logo {
+      font-size: 1.4rem;
+      font-weight: bold;
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .navbar {
+      display: flex;
+      gap: 18px;
+    }
+
+    .navbar a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    .navbar a:hover,
+    .navbar a.active {
+      color: #e63946;
+    }
+
+    .hamburger {
+      display: none;
+      font-size: 1.5rem;
+      color: #fff;
+      cursor: pointer;
+    }
+
+    @media (max-width: 768px) {
+      .navbar {
+        display: none;
+        flex-direction: column;
+        background: rgba(0, 0, 0, 0.6);
+        backdrop-filter: blur(8px);
+        padding: 16px;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        border-radius: 8px;
+      }
+
+      .navbar.show {
+        display: flex;
+      }
+
+      .hamburger {
+        display: block;
+      }
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 40px 5%;
+    }
+
+    .services-section {
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 1.8rem;
+      margin-bottom: 30px;
+      color: #e5f3ff;
+    }
+
+    .service-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .service-item {
+      background: rgba(255, 255, 255, 0.15);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      border-radius: 16px;
+      padding: 20px;
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+
+    .service-item:hover {
+      transform: translateY(-6px);
+    }
+
+    .service-item i {
+      font-size: 2rem;
+      color: #e63946;
+      margin-bottom: 10px;
+    }
+
+    .service-item h3 {
+      font-size: 1.2rem;
+      margin: 10px 0;
+      color: #fff;
+    }
+
+    .service-item p {
+      font-size: 0.9rem;
+      color: #ddd;
+    }
+
+    .back-button {
+      display: inline-block;
+      margin: 40px auto 0;
+      padding: 10px 24px;
+      background: #e63946;
+      color: #fff;
+      font-size: 0.9rem;
+      border-radius: 30px;
+      border: none;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      text-align: center;
+    }
+
+    .back-button:hover {
+      background: transparent;
+      border: 2px solid #e63946;
+      color: #e63946;
+    }
+
+    @media (max-width: 768px) {
+      .section-title {
+        font-size: 1.4rem;
+      }
+
+      .service-item h3 {
+        font-size: 1rem;
+      }
+
+      .service-item p {
+        font-size: 0.85rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header>
+    <a href="index.html" class="logo">Portofolio.</a>
+    <div class="hamburger" onclick="toggleNavbar()">
+      <i class="ri-menu-line"></i>
+    </div>
+    <nav class="navbar" id="navbar">
+      <a href="index.html">Home</a>
+      <a href="tentang.html">Tentang Saya</a>
+      <a href="portofolio.html">Portofolio</a>
+      <a href="service.html" class="active">Service</a>
+      <a href="kontak.html">Kontak</a>
+    </nav>
+  </header>
+
+  <!-- Layanan -->
+  <div class="container">
+    <section class="services-section">
+      <h2 class="section-title">Layanan Saya</h2>
+      <div class="service-list">
+
+        <!-- Layanan 1 -->
+        <div class="service-item">
+          <i class="ri-global-line"></i>
+          <h3>Pembuatan Website</h3>
+          <p>Saya dapat membuat website profil, toko online, blog, atau sistem informasi berbasis PHP, HTML, CSS, dan JavaScript.</p>
+        </div>
+
+        <!-- Layanan 2 -->
+        <div class="service-item">
+          <i class="ri-smartphone-line"></i>
+          <h3>Aplikasi Android</h3>
+          <p>Mengembangkan aplikasi pembelajaran berbasis Android seperti AR Tata Surya atau Kuis Edukasi interaktif.</p>
+        </div>
+
+        <!-- Layanan 3 -->
+        <div class="service-item">
+          <i class="ri-paint-brush-line"></i>
+          <h3>Desain UI/UX</h3>
+          <p>Desain antarmuka menarik dan user-friendly untuk website atau aplikasi menggunakan tools seperti Figma atau Canva.</p>
+        </div>
+
+      </div>
+    </section>
+  </div>
+
+  <!-- Toggle Script -->
+  <script>
+    function toggleNavbar() {
+      document.getElementById("navbar").classList.toggle("show");
+    }
+  </script>
+
+</body>
+</html>
